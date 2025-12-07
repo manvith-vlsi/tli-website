@@ -8,22 +8,37 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo-wrap">
-       <img src="assets/instagram-color.png" alt="Instagram Logo">
-       <img src="assets/youtube-color.png" alt="YouTube Logo">
-       <img src="assets/x-color.png" alt="X Logo">
-      </div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#apps">Apps</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <div class="container header-inner">
+    <!-- left: logo -->
+    <div class="brand">
+      <a href="#home" class="brand-link" aria-label="TLI Studios home">
+        <img src="assets/logo.png" alt="TLI Studios" class="logo" />
+      </a>
     </div>
-  </header>
 
-  <main>
+    <!-- center / right: nav -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- right: social icons -->
+    <div class="social-icons" aria-hidden="false">
+      <a href="https://instagram.com/tli_studios_official" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="assets/instagram-color.png" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://youtube.com/@TLI_Studios_Official" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="assets/youtube-color.png" alt="YouTube" class="social-icon" />
+      </a>
+      <a href="https://x.com/TLI_Studios" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <img src="assets/x-color.png" alt="X" class="social-icon" />
+      </a>
+    </div>
+  </div>
+</header>
+<main>
     <section id="home" class="hero">
       <div class="container hero-inner">
         <h1 class="hero-title">TLI Studios</h1>
