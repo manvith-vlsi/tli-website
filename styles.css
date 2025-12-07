@@ -40,4 +40,70 @@ body{margin:0;font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Robo
   .about .values{flex-direction:column;align-items:center}
   .app-card{width:92%}
   .hero-title{font-size:44px}
+  /* Header (logo + nav + social icons) */
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+/* brand logo */
+.brand-link { display:inline-block; }
+.logo {
+  height:44px;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+/* main navigation */
+.nav {
+  display:flex;
+  gap:24px;
+  align-items:center;
+  justify-content:center;
+}
+.nav a {
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 6px;
+  font-weight:600;
+  border-radius:6px;
+}
+.nav a:hover { background: rgba(255,255,255,0.02); }
+
+/* social icons block (header) */
+.header-inner .social-icons {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.header-inner .social-icon {
+  width:48px;
+  height:48px;
+  display:block;
+  object-fit:contain;
+  transition: transform .12s ease, opacity .12s ease;
+}
+.header-inner .social-icons a:hover .social-icon {
+  transform: translateY(-3px);
+  opacity:0.95;
+}
+
+/* contact section icons (smaller white versions) */
+.contact .social-icons img { width:40px; height:40px; object-fit:contain }
+
+/* responsive */
+@media (max-width:900px){
+  .nav { gap:16px; }
+  .logo { height:40px; }
+  .header-inner .social-icon { width:40px; height:40px; }
+}
+@media (max-width:520px){
+  .nav { display:none; } /* replace with hamburger later if desired */
+  .logo { height:36px; }
+  .header-inner .social-icon { width:34px; height:34px; }
+  .header-inner { gap:10px; padding:6px 0; }
+}
+
 }
