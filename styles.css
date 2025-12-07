@@ -250,3 +250,15 @@ body {
   #brand-text { font-size: 18px; }
   .header-inner { padding: 6px 0; }
 }
+/* FORCE-HIDE any social icon images (temporary immediate fix) */
+.header-inner .social-icons,
+.header-inner .social-icons img,
+.contact .social-icons,
+.contact .social-icons img {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
