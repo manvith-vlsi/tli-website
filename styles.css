@@ -1,0 +1,43 @@
+:root{
+  --bg:#000000;
+  --text:#eaeaea;
+  --muted:#cfcfcf;
+  --accent1:#8A2BE2;
+  --accent2:#00E5FF;
+  --container:1100px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.site-header{padding:18px 0;border-bottom:1px solid rgba(155,92,255,0.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{height:44px}
+.nav a{color:var(--text);text-decoration:none;margin-left:28px;font-weight:600}
+.hero{padding:90px 0 80px;text-align:center}
+.hero-title{font-size:68px;margin:0;color:#fff;text-shadow:0 18px 40px rgba(138,43,226,0.18);letter-spacing:1px;font-weight:700}
+.hero-sub{font-size:24px;margin:14px 0 10px;font-weight:700}
+.hero-tag{color:var(--muted);font-size:18px;margin-bottom:22px;max-width:820px;margin-left:auto;margin-right:auto}
+.cta{display:inline-block;padding:12px 28px;border-radius:28px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(13,13,13,0.6)}
+.about{padding:60px 0;text-align:center}
+.lead{color:var(--muted);max-width:920px;margin:0 auto 18px;line-height:1.6;font-size:18px}
+.about .values{display:flex;gap:44px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.val{max-width:320px;text-align:center}
+.val h3{text-decoration:underline;text-underline-offset:8px;margin-bottom:10px}
+.apps{padding:60px 0;text-align:center}
+.app-card{width:680px;margin:28px auto;padding:28px;border-radius:6px;background:linear-gradient(180deg,#3b1f5a,#8a2be2);color:#fff;box-shadow:0 20px 40px rgba(0,0,0,0.6)}
+.app-card h3{margin:0 0 12px;font-size:22px}
+.app-card ul{text-align:left;padding-left:20px;line-height:1.7}
+.app-card .coming{text-align:center;margin-top:16px;opacity:0.95;font-weight:600}
+.contact{padding:70px 0 100px;text-align:center}
+.mailto{display:inline-block;margin:18px 0;padding:8px 18px;border-bottom:2px solid #fff;color:#fff;text-decoration:none;font-weight:700}
+.social-icons{display:flex;gap:40px;justify-content:center;margin:18px 0}
+.social-icons img{height:44px;filter:brightness(1)}
+.follow-list{color:var(--muted);margin-top:8px}
+.site-footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(155,92,255,0.12)}
+.site-footer a{color:var(--muted);text-decoration:none}
+.divider{height:1px;width:100%;background:transparent;margin-bottom:10px}
+@media(max-width:900px){
+  .about .values{flex-direction:column;align-items:center}
+  .app-card{width:92%}
+  .hero-title{font-size:44px}
+}
