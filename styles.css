@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------
-   GLOBAL STYLES
+   GLOBAL VARIABLES
 ---------------------------------------------------------- */
 :root {
   --bg: #000000;
@@ -10,16 +10,13 @@
   --container: 1100px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
   background: var(--bg);
   color: var(--text);
-  -webkit-font-smoothing: antialiased;
 }
 
 /* ----------------------------------------------------------
@@ -45,14 +42,13 @@ body {
   justify-content: space-between;
 }
 
-/* Brand text (no logo image now) */
 #brand-text {
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
 }
 
-/* Navigation */
+/* NAV */
 .nav {
   display: flex;
   gap: 28px;
@@ -62,20 +58,28 @@ body {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
-  padding: 6px 4px;
 }
 
-.nav a:hover {
+.nav a:hover { color: var(--accent2); }
+
+/* SOCIAL TEXT LINKS */
+.social-text-links {
+  display: flex;
+  gap: 18px;
+}
+
+.social-text-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-text-links a:hover {
   color: var(--accent2);
 }
 
-/* Header right spacer (keeps balance) */
-.header-right-spacer {
-  width: 48px;
-}
-
 /* ----------------------------------------------------------
-   HERO SECTION
+   HERO
 ---------------------------------------------------------- */
 .hero {
   padding: 90px 0 80px;
@@ -90,11 +94,7 @@ body {
   font-weight: 700;
 }
 
-.hero-sub {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 14px 0 10px;
-}
+.hero-sub { font-size: 24px; font-weight: 700; margin: 14px 0 10px; }
 
 .hero-tag {
   color: var(--muted);
@@ -111,11 +111,10 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  box-shadow: 0 10px 30px rgba(13,13,13,0.6);
 }
 
 /* ----------------------------------------------------------
-   ABOUT SECTION
+   ABOUT
 ---------------------------------------------------------- */
 .about {
   padding: 60px 0;
@@ -138,17 +137,11 @@ body {
   flex-wrap: wrap;
 }
 
-.val {
-  max-width: 320px;
-}
-
-.val h3 {
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
+.val { max-width: 320px; }
+.val h3 { text-decoration: underline; text-underline-offset: 8px; }
 
 /* ----------------------------------------------------------
-   APPS SECTION
+   APPS
 ---------------------------------------------------------- */
 .apps {
   padding: 60px 0;
@@ -162,28 +155,10 @@ body {
   border-radius: 6px;
   background: linear-gradient(180deg, #3b1f5a, #8a2be2);
   color: #fff;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-.app-card h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-
-.app-card ul {
-  text-align: left;
-  padding-left: 20px;
-  line-height: 1.7;
-}
-
-.coming {
-  margin-top: 16px;
-  opacity: 0.95;
-  font-weight: 600;
 }
 
 /* ----------------------------------------------------------
-   CONTACT SECTION
+   CONTACT
 ---------------------------------------------------------- */
 .contact {
   padding: 70px 0 100px;
@@ -202,7 +177,6 @@ body {
 
 .follow-list {
   color: var(--muted);
-  margin-top: 8px;
   font-size: 18px;
 }
 
@@ -216,49 +190,18 @@ body {
   border-top: 1px solid rgba(155,92,255,0.12);
 }
 
-.site-footer a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.footer-email {
-  margin-top: 6px;
-}
-
-/* Divider line above footer */
-.divider {
-  height: 1px;
-  width: 100%;
-  background: transparent;
-  margin-bottom: 10px;
-}
+.site-footer a { color: var(--muted); }
 
 /* ----------------------------------------------------------
    RESPONSIVE
 ---------------------------------------------------------- */
 @media (max-width: 900px) {
-  .hero-title { font-size: 44px; }
-  .app-card { width: 92%; }
-  .values { flex-direction: column; }
-
   #brand-text { font-size: 20px; }
-  .nav { gap: 16px; }
+  .nav { gap: 18px; }
 }
 
 @media (max-width: 520px) {
-  .nav { display: none; }     /* Hide menu on very small screens */
+  .nav { display: none; }
   #brand-text { font-size: 18px; }
-  .header-inner { padding: 6px 0; }
-}
-/* FORCE-HIDE any social icon images (temporary immediate fix) */
-.header-inner .social-icons,
-.header-inner .social-icons img,
-.contact .social-icons,
-.contact .social-icons img {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  .social-text-links { gap: 12px; }
 }
