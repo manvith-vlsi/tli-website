@@ -1,86 +1,204 @@
-/* -------------------------
-  Fix: colors + alignment tweaks
-  Paste at the BOTTOM of styles.css
-------------------------- */
-
-/* use muted link color by default, accent on hover */
-.nav a,
-.social-text-links a,
-.follow-list p {
-  color: var(--muted);
-}
-.nav a:hover,
-.social-text-links a:hover {
-  color: var(--accent2);
+/* Base layout */
+:root {
+  --bg: #050507;
+  --text: #ffffff;
+  --muted: #c0c0c0;
+  --accent: #a855ff;
+  --accent-blue: #38bdf8;
 }
 
-/* make page sections centered explicitly */
-.hero, .about, .apps, .contact, .site-footer {
-  text-align: center !important;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ensure container centering (defensive) */
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Container keeps everything aligned on all screens */
 .container {
-  max-width: var(--container);
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-/* HEADER: keep header items balanced and centered on all widths */
-.header-inner {
+/* Header / nav */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(5, 5, 7, 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* keeps brand left, nav center, socials right */
+  justify-content: space-between;
+  height: 70px;
 }
 
-/* center the navigation block (so it's visually centered between brand and social links) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: conic-gradient(from 180deg, #ec4899, #a855ff, #38bdf8, #ec4899);
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
 .nav {
-  display:flex;
-  gap:18px;
-  justify-content:center;
-  align-items:center;
-  flex: 1 1 auto;
+  display: flex;
+  gap: 1.8rem;
 }
 
-/* social-text-links placed to the right but aligned center vertically */
-.social-text-links {
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex: 0 0 auto;
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  position: relative;
 }
 
-/* MOBILE: center mobile-nav items and make them full-width tappable */
-@media (max-width: 720px) {
-  .header-inner { gap: 12px; padding: 6px 0; }
-  .brand { flex: 0 0 auto; }
-  .desktop-nav, .desktop-social { display: none; }
-  .menu-toggle { display: block; }
-
-  /* mobile menu container is full width and centered content */
-  .mobile-nav {
-    display: none; /* JS toggles .open */
-    text-align: center;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  .mobile-nav.open { display: block; }
-
-  .mobile-nav .mobile-link {
-    display: block;
-    padding: 12px 0;
-    text-align: center;
-    color: var(--muted);
-  }
-
-  /* keep the header brand visually centered if menu toggled */
-  .brand-link { display:flex; align-items:center; gap:8px; }
-
-  /* avoid left-aligned overflow on very small screens */
-  body, html { min-width: 320px; overflow-x: hidden; }
+.nav-link.active,
+.nav-link:hover {
+  color: var(--text);
 }
 
-/* tiny tweak: footer text center on all sizes */
-.site-footer .container { text-align: center; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-blue));
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Sections */
+.section,
+.hero {
+  padding: 4.5rem 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 0.98rem;
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, var(--accent), var(--accent-blue));
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* About / pillars */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-text {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.pillar {
+  flex: 1 1 220px;
+  max-width: 320px;
+  padding: 1.5rem 1.2rem;
+  border-left: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Apps card */
+.app-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.app-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, #a855ff, #0f172a);
+  opacity: 0.95;
+}
+
+.app-card-content {
+  position: relative;
+  padding: 2.4rem 1.8rem;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.app-subtitle {
+  font-size: 0.96rem;
+  max-width: 520px;
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.app-features {
+  list-style: disc;
