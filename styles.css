@@ -174,11 +174,10 @@ body {
 }
 
 .app-card-gradient {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, #a855ff, #0f172a);
-  opacity: 0.95;
+  display: none;             /* hides the full‑screen looking color layer */
 }
+
+
 
 .app-card-content {
   position: relative;
@@ -274,8 +273,4 @@ body {
   color: #e5e7eb;
   text-decoration: none;
   font-size: 0.9rem;
-}
-/* Option 1: remove the gradient card completely */
-.app-card {
-  display: none;
 }
