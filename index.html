@@ -143,6 +143,40 @@
       <p class="footer-email">contact.tlistudios@gmail.com</p>
     </div>
   </footer>
+<script>
+  (function(){
+    const btn = document.querySelector('.menu-toggle');
+    const mobile = document.getElementById('mobile-nav');
+    if(!btn || !mobile) return;
+
+    function setOpen(open){
+      if(open){
+        mobile.classList.add('open');
+        mobile.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+      } else {
+        mobile.classList.remove('open');
+        mobile.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+      }
+    }
+
+    btn.addEventListener('click', function(){
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      setOpen(!open);
+    });
+
+    // close menu when a mobile link is clicked
+    mobile.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', ()=> setOpen(false));
+    });
+
+    // close on Escape
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
 
 </body>
 </html>
