@@ -1,182 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<!-- HEADER (mobile-friendly with hamburger) -->
-<header class="site-header">
-  <div class="container header-inner">
-    <!-- left: brand -->
-    <div class="brand">
-      <a href="#home" class="brand-link" aria-label="TLI Studios home">
-        <span id="brand-text">TLI Studios</span>
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TLI Studios</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <div class="logo-icon"></div>
+        <span class="logo-text">TLI Studios</span>
+      </div>
+      <nav class="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#apps" class="nav-link">Apps</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- desktop nav (kept for wide screens) -->
-    <nav class="nav desktop-nav" role="navigation" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#apps">Apps</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- desktop social text links -->
-    <div class="social-text-links desktop-social">
-      <a href="https://instagram.com/tli_studios_official" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://youtube.com/@TLI_Studios_Official" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://x.com/TLI_Studios" target="_blank" rel="noopener">X</a>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <h1 class="hero-title">TLI Studios</h1>
+      <p class="hero-subtitle">Trust. Loyalty. Innovation.</p>
+      <p class="hero-text">
+        Building the next generation of smart and secure apps.
+      </p>
+      <a href="#apps" class="btn-primary">Explore Apps</a>
     </div>
+  </section>
 
-    <!-- hamburger button (mobile only) -->
-    <button class="menu-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-  </div>
-
-  <!-- mobile menu: hidden by default, shown when hamburger toggled -->
-  <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
-    <nav class="nav mobile-nav-links" role="navigation" aria-label="Mobile navigation">
-      <a href="#home" class="mobile-link">Home</a>
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#apps" class="mobile-link">Apps</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <hr class="mobile-sep" />
-      <!-- social text links in mobile menu -->
-      <a href="https://instagram.com/tli_studios_official" target="_blank" rel="noopener" class="mobile-link">Instagram</a>
-      <a href="https://youtube.com/@TLI_Studios_Official" target="_blank" rel="noopener" class="mobile-link">YouTube</a>
-      <a href="https://x.com/TLI_Studios" target="_blank" rel="noopener" class="mobile-link">X</a>
-    </nav>
-  </div>
-</header>
-
-
-  <main>
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <h1 class="hero-title">TLI Studios</h1>
-        <h2 class="hero-sub">Trust. Loyalty. Innovation.</h2>
-        <p class="hero-tag">Building the next generation of smart and secure apps.</p>
-        <a class="cta" href="#apps">Explore Apps</a>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About TLI Studios</h2>
-        <p class="lead">
-          TLI Studios is a small independent software studio focused on building smart, secure, and privacy-friendly apps.
-          We believe technology should protect users and be simple to use.
-        </p>
-
-        <div class="values">
-          <div class="val">
-            <h3>Trust</h3>
-            <p>We design our apps with security and transparency in mind — no shady tracking.</p>
-          </div>
-
-          <div class="val">
-            <h3>Loyalty</h3>
-            <p>We build long-term relationships through frequent updates and real user support.</p>
-          </div>
-
-          <div class="val">
-            <h3>Innovation</h3>
-            <p>We solve real problems using clean, modern, easy-to-use solutions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- APPS -->
-    <section id="apps" class="apps">
-      <div class="container">
-        <h2>Our Apps</h2>
-        <p class="lead">We create smart, secure, and user-friendly apps designed to make digital life safer and simpler.</p>
-
-        <div class="app-card">
-          <h3>SecureKids</h3>
-          <p>A smart parental control app that blocks adult content, detects VPN usage, and gives parents control over their child’s device.</p>
-
-          <ul>
-            <li>Blocks harmful content</li>
-            <li>Detects and alerts VPN usage</li>
-            <li>Parent-controlled uninstall protection</li>
-          </ul>
-
-          <div class="coming">Coming Soon</div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
+  <!-- About -->
+  <section id="about" class="section about">
     <div class="container">
-      <h2>Contact Us</h2>
-      <p class="lead">We’d love to hear from you — suggestions, support requests, or collaboration opportunities.</p>
-
-      <a class="mailto" href="mailto:contact.tlistudios@gmail.com">contact.tlistudios@gmail.com</a>
-
-      <!-- Text-only social list -->
-      <div class="follow-list" style="margin-top:28px;">
-        <p><strong>Follow us:</strong></p>
-        <p>Instagram : @tli_studios_official</p>
-        <p>X         : @TLI_Studios</p>
-        <p>YouTube   : @TLI_Studios_Official</p>
+      <h2 class="section-title">About TLI Studios</h2>
+      <p class="section-text">
+        TLI Studios is a small independent software studio focused on building smart, secure and simple apps. We design with privacy, clarity, and real‑world usefulness in mind.
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Trust</h3>
+          <p>
+            Apps designed with security and transparency, avoiding unnecessary tracking or data collection.
+          </p>
+        </div>
+        <div class="pillar">
+          <h3>Loyalty</h3>
+          <p>
+            Long‑term relationships with users through regular updates, support, and listening to feedback.
+          </p>
+        </div>
+        <div class="pillar">
+          <h3>Innovation</h3>
+          <p>
+            Modern technology solving real problems, from safer digital experiences to smarter tools.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- Apps -->
+  <section id="apps" class="section apps">
     <div class="container">
-      <div class="divider"></div>
-      <p>© 2025 TLI Studios. All rights reserved.  •  
-        <a href="privacy.html">Privacy Policy</a>  •  
-        <a href="terms.html">Terms of Use</a>
+      <h2 class="section-title">Our Apps</h2>
+      <p class="section-text">
+        Smart, secure, and user‑friendly apps designed to make digital life safer and simpler for families.
       </p>
-      <p class="footer-email">contact.tlistudios@gmail.com</p>
+
+      <div class="app-card">
+        <div class="app-card-gradient"></div>
+        <div class="app-card-content">
+          <h3 class="app-title">SecureKids</h3>
+          <p class="app-subtitle">
+            A smart parental control app that blocks harmful content, detects VPN usage, and helps parents protect their child’s digital safety.
+          </p>
+          <ul class="app-features">
+            <li>Blocks harmful content</li>
+            <li>Detects and alerts VPN usage</li>
+            <li>Parent‑controlled uninstall protection</li>
+          </ul>
+          <p class="coming-soon">[ Coming Soon ]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-text">
+        Have suggestions, support requests, or collaboration ideas? Reach out anytime.
+      </p>
+
+      <a href="mailto:contact.tlistudios@gmail.com" class="contact-email">
+        contact.tlistudios@gmail.com
+      </a>
+
+      <div class="socials">
+        <a href="#" class="social-icon instagram" aria-label="Instagram"></a>
+        <a href="#" class="social-icon youtube" aria-label="YouTube"></a>
+        <a href="#" class="social-icon x" aria-label="X"></a>
+      </div>
+
+      <div class="social-handles">
+        <p>Instagram: @tli_studios_official</p>
+        <p>X: @TLI_Studios</p>
+        <p>YouTube: @TLI_Studios_Official</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-gradient"></div>
+    <div class="footer-inner">
+      <p>© 2025 TLI Studios. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <a href="mailto:contact.tlistudios@gmail.com" class="footer-email">
+        contact.tlistudios@gmail.com
+      </a>
     </div>
   </footer>
-<script>
-  (function(){
-    const btn = document.querySelector('.menu-toggle');
-    const mobile = document.getElementById('mobile-nav');
-    if(!btn || !mobile) return;
-
-    function setOpen(open){
-      if(open){
-        mobile.classList.add('open');
-        mobile.setAttribute('aria-hidden','false');
-        btn.setAttribute('aria-expanded','true');
-      } else {
-        mobile.classList.remove('open');
-        mobile.setAttribute('aria-hidden','true');
-        btn.setAttribute('aria-expanded','false');
-      }
-    }
-
-    btn.addEventListener('click', function(){
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      setOpen(!open);
-    });
-
-    // close menu when a mobile link is clicked
-    mobile.querySelectorAll('a').forEach(a=>{
-      a.addEventListener('click', ()=> setOpen(false));
-    });
-
-    // close on Escape
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') setOpen(false);
-    });
-  })();
-</script>
-
-</body>
-</html>
