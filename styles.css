@@ -1,261 +1,86 @@
-/* ----------------------------------------------------------
-   GLOBAL VARIABLES
----------------------------------------------------------- */
-:root {
-  --bg: #000000;
-  --text: #eaeaea;
-  --muted: #cfcfcf;
-  --accent1: #8A2BE2;
-  --accent2: #00E5FF;
-  --container: 1100px;
+/* -------------------------
+  Fix: colors + alignment tweaks
+  Paste at the BOTTOM of styles.css
+------------------------- */
+
+/* use muted link color by default, accent on hover */
+.nav a,
+.social-text-links a,
+.follow-list p {
+  color: var(--muted);
 }
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* ----------------------------------------------------------
-   LAYOUT
----------------------------------------------------------- */
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ----------------------------------------------------------
-   HEADER
----------------------------------------------------------- */
-/* ---------- Mobile menu & hamburger (add below header rules) ---------- */
-
-/* hide hamburger + mobile menu by default (desktop) */
-.menu-toggle { display:none; background:none; border:0; padding:6px; cursor:pointer; }
-.menu-toggle .hamburger-line { display:block; width:22px; height:2px; background:var(--text); margin:4px 0; border-radius:2px; transition: transform .18s ease, opacity .18s ease; }
-
-/* mobile nav container (hidden by default) */
-.mobile-nav { display:none; background:linear-gradient(180deg, rgba(10,10,10,0.98), rgba(0,0,0,0.98)); padding:14px 20px; border-top:1px solid rgba(155,92,255,0.06); z-index:25; }
-
-/* mobile links */
-.mobile-nav .mobile-link {
-  display:block;
-  padding:10px 0;
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
-  border-bottom:1px solid rgba(255,255,255,0.02);
-}
-.mobile-nav .mobile-link:last-child { border-bottom:0; }
-.mobile-sep { border:0; height:1px; background:rgba(255,255,255,0.03); margin:12px 0; }
-
-/* Desktop-only helpers (keeps existing behavior) */
-.desktop-nav { display:flex; gap:28px; align-items:center; }
-.desktop-social { display:flex; gap:18px; align-items:center; }
-
-/* ---- Responsive: switch to mobile header layout ---- */
-@media (max-width: 720px) {
-  /* hide desktop nav & social links */
-  .desktop-nav { display:none; }
-  .desktop-social { display:none; }
-
-  /* show hamburger button */
-  .menu-toggle { display:block; }
-
-  /* style header to center brand */
-  .header-inner { align-items:center; gap:12px; }
-
-  /* brand (center visually) */
-  .brand { flex: 1 1 auto; }
-  .brand-link { display:flex; align-items:center; gap:8px; }
-  #brand-text { font-size:18px; }
-
-  /* mobile menu: full width */
-  .mobile-nav { display:none; }       /* toggled via JS */
-  .mobile-nav.open { display:block; }
-}
-
-/* small tweak for very small phones */
-@media (max-width: 420px) {
-  #brand-text { font-size:17px; }
-  .mobile-nav { padding:12px 16px; }
-  .mobile-nav .mobile-link { padding:10px 0; font-size:16px; }
-}
-
-.site-header {
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(155,92,255,0.08);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#brand-text {
-  font-size: 24px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* NAV */
-.nav {
-  display: flex;
-  gap: 28px;
-}
-
-.nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.nav a:hover { color: var(--accent2); }
-
-/* SOCIAL TEXT LINKS */
-.social-text-links {
-  display: flex;
-  gap: 18px;
-}
-
-.social-text-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-}
-
+.nav a:hover,
 .social-text-links a:hover {
   color: var(--accent2);
 }
 
-/* ----------------------------------------------------------
-   HERO
----------------------------------------------------------- */
-.hero {
-  padding: 90px 0 80px;
-  text-align: center;
+/* make page sections centered explicitly */
+.hero, .about, .apps, .contact, .site-footer {
+  text-align: center !important;
 }
 
-.hero-title {
-  font-size: 68px;
-  margin: 0;
-  color: #fff;
-  text-shadow: 0 18px 40px rgba(138,43,226,0.2);
-  font-weight: 700;
+/* ensure container centering (defensive) */
+.container {
+  max-width: var(--container);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.hero-sub { font-size: 24px; font-weight: 700; margin: 14px 0 10px; }
-
-.hero-tag {
-  color: var(--muted);
-  max-width: 820px;
-  margin: 0 auto 22px;
-  font-size: 18px;
-}
-
-.cta {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 28px;
-  background: linear-gradient(90deg, var(--accent1), var(--accent2));
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-/* ----------------------------------------------------------
-   ABOUT
----------------------------------------------------------- */
-.about {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.lead {
-  color: var(--muted);
-  max-width: 920px;
-  margin: 0 auto 18px;
-  line-height: 1.6;
-  font-size: 18px;
-}
-
-.values {
+/* HEADER: keep header items balanced and centered on all widths */
+.header-inner {
   display: flex;
-  gap: 44px;
-  justify-content: center;
-  margin-top: 28px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; /* keeps brand left, nav center, socials right */
 }
 
-.val { max-width: 320px; }
-.val h3 { text-decoration: underline; text-underline-offset: 8px; }
-
-/* ----------------------------------------------------------
-   APPS
----------------------------------------------------------- */
-.apps {
-  padding: 60px 0;
-  text-align: center;
+/* center the navigation block (so it's visually centered between brand and social links) */
+.nav {
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+  flex: 1 1 auto;
 }
 
-.app-card {
-  width: 680px;
-  margin: 28px auto;
-  padding: 28px;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #3b1f5a, #8a2be2);
-  color: #fff;
+/* social-text-links placed to the right but aligned center vertically */
+.social-text-links {
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex: 0 0 auto;
 }
 
-/* ----------------------------------------------------------
-   CONTACT
----------------------------------------------------------- */
-.contact {
-  padding: 70px 0 100px;
-  text-align: center;
+/* MOBILE: center mobile-nav items and make them full-width tappable */
+@media (max-width: 720px) {
+  .header-inner { gap: 12px; padding: 6px 0; }
+  .brand { flex: 0 0 auto; }
+  .desktop-nav, .desktop-social { display: none; }
+  .menu-toggle { display: block; }
+
+  /* mobile menu container is full width and centered content */
+  .mobile-nav {
+    display: none; /* JS toggles .open */
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .mobile-nav.open { display: block; }
+
+  .mobile-nav .mobile-link {
+    display: block;
+    padding: 12px 0;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  /* keep the header brand visually centered if menu toggled */
+  .brand-link { display:flex; align-items:center; gap:8px; }
+
+  /* avoid left-aligned overflow on very small screens */
+  body, html { min-width: 320px; overflow-x: hidden; }
 }
 
-.mailto {
-  display: inline-block;
-  margin: 18px 0;
-  padding-bottom: 6px;
-  border-bottom: 2px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.follow-list {
-  color: var(--muted);
-  font-size: 18px;
-}
-
-/* ----------------------------------------------------------
-   FOOTER
----------------------------------------------------------- */
-.site-footer {
-  padding: 28px 0;
-  text-align: center;
-  color: var(--muted);
-  border-top: 1px solid rgba(155,92,255,0.12);
-}
-
-.site-footer a { color: var(--muted); }
-
-/* ----------------------------------------------------------
-   RESPONSIVE
----------------------------------------------------------- */
-@media (max-width: 900px) {
-  #brand-text { font-size: 20px; }
-  .nav { gap: 18px; }
-}
-
-@media (max-width: 520px) {
-  .nav { display: none; }
-  #brand-text { font-size: 18px; }
-  .social-text-links { gap: 12px; }
-}
+/* tiny tweak: footer text center on all sizes */
+.site-footer .container { text-align: center; }
