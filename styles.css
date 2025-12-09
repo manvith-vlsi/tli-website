@@ -244,11 +244,10 @@ body {
   margin-top: 3rem;
 }
 
-.footer {
-  position: relative;
-  margin-top: 3rem;
-  background: #050507;  /* or any solid color you like */
+.footer-gradient {
+  display: none;
 }
+
 
 
 .footer-inner {
