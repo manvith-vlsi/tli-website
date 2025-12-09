@@ -1,44 +1,54 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TLI Studios — Trust. Loyalty. Innovation.</title>
-  <meta name="description" content="TLI Studios builds smart, secure and privacy-friendly apps that make digital life safer and simpler.">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-
-      <!-- Left: Brand Name -->
-      <div class="brand">
-        <a href="#home" class="brand-link" aria-label="TLI Studios home">
-          <span id="brand-text">TLI Studios</span>
-        </a>
-      </div>
-
-      <!-- Middle: Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#apps">Apps</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <!-- Right: Social TEXT links -->
-      <div class="social-text-links">
-        <a href="https://instagram.com/tli_studios_official" target="_blank">Instagram</a>
-        <a href="https://youtube.com/@TLI_Studios_Official" target="_blank">YouTube</a>
-        <a href="https://x.com/TLI_Studios" target="_blank">X</a>
-      </div>
-
+<!-- HEADER (mobile-friendly with hamburger) -->
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- left: brand -->
+    <div class="brand">
+      <a href="#home" class="brand-link" aria-label="TLI Studios home">
+        <span id="brand-text">TLI Studios</span>
+      </a>
     </div>
-  </header>
+
+    <!-- desktop nav (kept for wide screens) -->
+    <nav class="nav desktop-nav" role="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- desktop social text links -->
+    <div class="social-text-links desktop-social">
+      <a href="https://instagram.com/tli_studios_official" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@TLI_Studios_Official" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/TLI_Studios" target="_blank" rel="noopener">X</a>
+    </div>
+
+    <!-- hamburger button (mobile only) -->
+    <button class="menu-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+
+  <!-- mobile menu: hidden by default, shown when hamburger toggled -->
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <nav class="nav mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#apps" class="mobile-link">Apps</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <hr class="mobile-sep" />
+      <!-- social text links in mobile menu -->
+      <a href="https://instagram.com/tli_studios_official" target="_blank" rel="noopener" class="mobile-link">Instagram</a>
+      <a href="https://youtube.com/@TLI_Studios_Official" target="_blank" rel="noopener" class="mobile-link">YouTube</a>
+      <a href="https://x.com/TLI_Studios" target="_blank" rel="noopener" class="mobile-link">X</a>
+    </nav>
+  </div>
+</header>
+
 
   <main>
 
