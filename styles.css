@@ -167,21 +167,15 @@ body {
 /* Apps */
 
 .app-card {
-  position: relative;
+  max-width: 600px;        /* keeps box smaller */
+  margin: 1rem auto 0;     /* center horizontally */
   border-radius: 18px;
   overflow: hidden;
-  margin-top: 1rem;
-}
-
-/* remove big purple overlay */
-.app-card-gradient {
-  display: none;
+  background: #111827;
 }
 
 .app-card-content {
-  position: relative;
   padding: 2.4rem 1.8rem;
-  background: #111827;          /* subtle dark card background */
 }
 
 .app-title {
@@ -251,4 +245,33 @@ body {
 }
 
 .footer-gradient {
-  position
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #1e293b, #4c1d95);
+  opacity: 0.95;
+}
+
+.footer-inner {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #e5e7eb;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links a,
+.footer-email {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
