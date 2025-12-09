@@ -244,12 +244,12 @@ body {
   margin-top: 3rem;
 }
 
-.footer-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #1e293b, #4c1d95);
-  opacity: 0.95;
+.footer {
+  position: relative;
+  margin-top: 3rem;
+  background: #050507;  /* or any solid color you like */
 }
+
 
 .footer-inner {
   position: relative;
