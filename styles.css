@@ -239,3 +239,39 @@ body {
 }
 
 .social
+.footer {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.footer-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #1e293b, #4c1d95);
+  opacity: 0.95;
+}
+
+.footer-inner {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.4rem 1rem;
+  text-align: center;          /* centers text */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #e5e7eb;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;     /* centers links horizontally */
+  gap: 1.5rem;
+}
+
+.footer-links a,
+.footer-email {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
